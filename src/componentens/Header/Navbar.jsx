@@ -1,10 +1,18 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Navbar = () => {
   const links = (
     <>
-      <li className="m-2">Home</li>
-      <li className="m-2">About</li>
+      <Link to="./">
+        <li className="m-2 font-semibold text-xl">Home</li>
+      </Link>
+      <Link to="/about">
+        <li className="m-2 font-semibold text-xl">About</li>
+      </Link>
+      <Link to="/readList">
+        <li className="m-2 font-semibold text-xl">ReadList</li>
+      </Link>
     </>
   );
   return (
@@ -35,13 +43,14 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">BoiPoka</a>
+        <a className="btn btn-ghost text-2 font-bold  text-2xl">Book Vibe</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end gap-8  ">
+        <a className="btn px-7 py-6 bg-[#23BE0A]">Sing in</a>
+        <a className="btn px-7 py-6 bg-[#59C6D2]">Sing Up</a>
       </div>
     </div>
   );
